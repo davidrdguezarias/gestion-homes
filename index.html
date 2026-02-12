@@ -1,3 +1,31 @@
+Skip to content
+davidrdguezarias
+gestion-homes
+Repository navigation
+Code
+Issues
+Pull requests
+Actions
+Projects
+Wiki
+Security
+Insights
+Settings
+gestion-homes
+/index.html
+Go to file
+t
+davidrdguezarias
+davidrdguezarias
+Update index.html
+b83994b
+ · 
+7 minutes ago
+
+Code
+
+Blame
+1244 lines (1102 loc) · 48.8 KB
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -233,8 +261,9 @@
         }
 
         /* === HERO IMAGE === */
-        .hero-image {
-            margin-top: var(--space-xl);
+            /* Reduce el margen bajo el dashboard */
+        .hero-image { 
+            margin-top: 2.5rem;  /* antes var(--space-xl) */
             animation: fadeInUp 0.8s ease-out 0.4s both;
         }
 
@@ -269,9 +298,10 @@
         }
 
         /* === FEATURES === */
-        .features {
-            padding: var(--space-2xl) var(--space-md);
-        }
+        /* Reduce el padding superior de Features */
+        .features { 
+            padding: 2.5rem var(--space-md) var(--space-2xl);
+         } /* antes var(--space-2xl) arriba */
 
         .section-header {
             text-align: center;
@@ -812,6 +842,19 @@
             .footer-left {
                 flex-direction: column;
             }
+            
+            /* Evita saltos de línea en frases clave */
+            .nowrap {
+                white-space: nowrap;
+            }
+
+            /* Evita que “pago único · acceso de por vida” se parta en dos líneas */
+            .price-meta {
+                white-space: nowrap;
+                display: inline-block;
+                font-size: 0.95rem;
+                opacity: 0.7;
+            }
         }
     </style>
 </head>
@@ -849,6 +892,7 @@
             <!--<h1>Gestiona tu cartera inmobiliaria <span>sin complicaciones</span></h1>
             <p class="hero-subtitle">La plantilla definitiva para inversores. Propiedades, finanzas, contratos y declaración de la renta en un solo lugar.</p> -->
             <h1>Controla tus inversiones inmobiliarias <span>en un solo lugar</span></h1>
+            <h1>Controla tus inversiones inmobiliarias <span class="nowrap">en un solo lugar</span></h1>
             <p class="hero-subtitle">
             Plantilla profesional en Notion para gestionar propiedades, números y contratos sin hojas de cálculo ni caos.
              Pago único. Acceso de por vida.
@@ -921,6 +965,32 @@
                     <h3>Contactos integrados</h3>
                     <p>Inquilinos, propietarios, agentes, reformistas. Toda tu red de contactos vinculada a cada propiedad.</p>
                 </div>
+
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 11l3 3L22 4"/>
+                            <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+                        </svg>
+                    </div>
+                    <h3>Tareas y operativa</h3>
+                    <p>Check-in y check-out, revisiones, mantenimientos y tareas administrativas. Todo con seguimiento y fechas.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="1" x2="12" y2="23"/>
+                            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                        </svg>
+                    </div>
+                    <h3>Fiscalidad y amortizaciones</h3>
+                    <p>Calcula ingresos totales, amortizaciones y gastos deducibles para tener tu declaración de la renta preparada.</p>
+                </div>
+
+
+
             </div>
         </div>
     </section>
@@ -947,7 +1017,8 @@
                         <div class="pricing-price">29€ <span>pago único</span></div> 
                         -->
                         <div class="pricing-subtitle">La base para ordenar tu cartera y tener números claros</div>
-                        <div class="pricing-price">29,00 € <span>pago único · acceso de por vida</span></div>
+                        <!-- <div class="pricing-price">29,00 € <span>pago único · acceso de por vida</span></div> -->
+                        <div class="pricing-price">29,00 € <span class="price-meta">pago único · acceso de por vida</span></div>
                     </div>
                     <ul class="pricing-features">
                         <li>
@@ -984,7 +1055,9 @@
                     <div class="pricing-header">
                         <div class="pricing-title">Gestion Homes Pro</div>
                         <div class="pricing-subtitle">Sistema completo para control, contratos y fiscalidad</div>
-                        <div class="pricing-price">99,00 € <span>pago único · acceso de por vida</span></div>
+                        <!-- <div class="pricing-price">99,00 € <span>pago único · acceso de por vida</span></div> -->
+                        <div class="pricing-price">99,00 € <span class="price-meta">pago único · acceso de por vida</span></div>
+
                     </div>
                     <ul class="pricing-features">
                         <li>
@@ -1242,3 +1315,4 @@
     </script>
 </body>
 </html>
+ 
