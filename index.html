@@ -338,6 +338,7 @@
             font-size: 1.15rem;
             font-weight: 500;
             margin-bottom: var(--space-xs);
+            min-height: 2.6em;   /* reserva ~2 líneas */
         }
 
         .feature-card p {
@@ -781,6 +782,12 @@
                 transform: translateY(0);
             }
         }
+        /* === HERO UTILITIES === */
+        .h1-accent {
+            display: block;                 /* fuerza segunda línea SIEMPRE */
+            font-style: italic;
+            color: var(--color-text-secondary);
+            }
 
         /* === RESPONSIVE === */
         @media (max-width: 640px) {
@@ -814,19 +821,12 @@
             .footer-left {
                 flex-direction: column;
             }
-            
-            /* Evita saltos de línea en frases clave */
-            .nowrap {
-                white-space: nowrap;
-            }
+            .h1-accent{
+                display:block;              /* fuerza segunda línea */
+                font-style: italic;
+                color: var(--color-text-secondary);
+            }                      
 
-            /* Evita que “pago único · acceso de por vida” se parta en dos líneas */
-            .price-meta {
-                white-space: nowrap;
-                display: inline-block;
-                font-size: 0.95rem;
-                opacity: 0.7;
-            }
         }
     </style>
 </head>
@@ -864,8 +864,10 @@
             <!--<h1>Gestiona tu cartera inmobiliaria <span>sin complicaciones</span></h1>
             <p class="hero-subtitle">La plantilla definitiva para inversores. Propiedades, finanzas, contratos y declaración de la renta en un solo lugar.</p> -->
             <!-- <h1>Controla tus inversiones inmobiliarias <span>en un solo lugar</span></h1> -->
-            <h1>Controla tus inversiones inmobiliarias <span class="nowrap">en un solo lugar</span></h1>
-            <p class="hero-subtitle">
+             <h1> Controla tus inversiones inmobiliarias 
+            <span class="h1-accent">en un solo lugar</span>
+            </h1>
+                        <p class="hero-subtitle">
             Plantilla profesional en Notion para gestionar propiedades, números y contratos sin hojas de cálculo ni caos.
              Pago único. Acceso de por vida.
             </p>
@@ -921,8 +923,8 @@
                             <rect x="8" y="2" width="8" height="4" rx="1" ry="1"/>
                         </svg>
                     </div>
-                    <h3>Análisis de oportunidades</h3>
-                    <p>Evalúa nuevas inversiones con un flujo estructurado. De "en estudio" a "en cartera" sin perder detalle.</p>
+                    <h3>Gestión de contratos</h3>
+                    <p>Renovaciones, seguros, hipotecas y documentación. Todo enlazado a la propiedad y con fechas bajo control.</p>
                 </div>
                 
                 <div class="feature-card">
