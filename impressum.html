@@ -4,47 +4,86 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Impressum — Gestion Homes</title>
-
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&display=swap" rel="stylesheet">
+    
     <style>
+        :root {
+            --color-bg: #FAFAF9;
+            --color-bg-alt: #FFFFFF;
+            --color-text: #1A1A19;
+            --color-text-secondary: #6B6B6A;
+            --color-accent: #2D2D2C;
+            --color-border: #E8E8E6;
+            --font-display: 'Fraunces', Georgia, serif;
+            --font-body: 'DM Sans', -apple-system, sans-serif;
+            --max-width: 720px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            background: #FAFAF9;
-            color: #1A1A19;
+            font-family: var(--font-body);
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            font-size: 16px;
             line-height: 1.7;
-            margin: 0;
+            -webkit-font-smoothing: antialiased;
         }
 
         main {
-            max-width: 720px;
+            max-width: var(--max-width);
             margin: 0 auto;
-            padding: 3rem 1.5rem 4rem;
+            padding: 3rem 1.5rem 5rem;
         }
 
         h1 {
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
+            font-family: var(--font-display);
+            font-size: 2.25rem;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            margin-bottom: 2rem;
         }
 
         h2 {
-            margin-top: 2rem;
-            font-size: 1.2rem;
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-weight: 500;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
         }
 
         p {
             margin-bottom: 1rem;
-            color: #444;
+            color: var(--color-text-secondary);
         }
 
-        a {
-            color: #1A1A19;
-        }
+        a { color: var(--color-accent); }
 
         footer {
-            border-top: 1px solid #E8E8E6;
+            border-top: 1px solid var(--color-border);
             padding: 2rem 1.5rem;
             text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links a {
+            color: var(--color-text-secondary);
+            text-decoration: none;
             font-size: 0.9rem;
-            color: #6B6B6A;
+        }
+
+        .copyright {
+            color: var(--color-text-secondary);
+            font-size: 0.85rem;
         }
     </style>
 </head>
@@ -62,9 +101,7 @@
     </p>
 
     <h2>Vertreten durch</h2>
-    <p>
-        Geschäftsführer: David Rodriguez Arias
-    </p>
+    <p>Geschäftsführer: David Rodriguez Arias</p>
 
     <h2>Kontakt</h2>
     <p>
@@ -73,16 +110,12 @@
 
     <h2>Registereintrag</h2>
     <p>
-        Eintragung im Handelsregister.<br>
         Registergericht: Amtsgericht München<br>
         Registernummer: HRB 286936
     </p>
 
     <h2>Umsatzsteuer-ID</h2>
-    <p>
-        Umsatzsteuer-Identifikationsnummer gemäß § 27a UStG:<br>
-        DE363257987
-    </p>
+    <p>DE363257987</p>
 
     <h2>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
     <p>
@@ -93,22 +126,27 @@
 
     <h2>EU-Streitschlichtung</h2>
     <p>
-        Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:
+        Plattform der EU-Kommission zur Online-Streitbeilegung:
         <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener noreferrer">
             https://ec.europa.eu/consumers/odr/
-        </a>.<br>
-        Unsere E-Mail-Adresse finden Sie oben im Impressum.
+        </a>
     </p>
 
-    <h2>Verbraucherstreitbeilegung / Universalschlichtungsstelle</h2>
+    <h2>Verbraucherstreitbeilegung</h2>
     <p>
-        Wir sind nicht verpflichtet und nicht bereit, an Streitbeilegungsverfahren vor
-        einer Verbraucherschlichtungsstelle teilzunehmen.
+        Wir sind nicht verpflichtet und nicht bereit, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
     </p>
 </main>
 
 <footer>
-    © 2026 RAIT Technology GmbH
+    <div class="footer-links">
+        <a href="/">Inicio</a>
+        <a href="/terminos.html">Términos</a>
+        <a href="/privacidad.html">Privacidad</a>
+        <a href="/impressum.html">Impressum</a>
+        <a href="mailto:david@gestion.homes">Contacto</a>
+    </div>
+    <p class="copyright">© 2026 RAIT Technology GmbH</p>
 </footer>
 
 </body>
