@@ -826,8 +826,8 @@
                 <span class="logo-text">Gestion Homes</span>
             </a>
             <div class="header-cta">
-                <a href="#pricing" class="btn btn-ghost">Precios</a>
-                <a href="#pricing" class="btn btn-primary">Empezar</a>
+                <a href="#features" class="btn btn-ghost">Cómo funciona</a>
+                <a href="#pricing" class="btn btn-primary">Ver precios</a>
             </div>
         </div>
     </header>
@@ -1183,7 +1183,7 @@
                 </div>
             </div>
             <div class="footer-right">
-                © 2026 Gestion Homes
+                © 2026 RAIT Technology GmbH
             </div>
         </div>
     </footer>
@@ -1208,10 +1208,9 @@
             btn.addEventListener('click', function(e) {
                 e.preventDefault();
                 const product = this.dataset.product;
-                // Reemplaza estas URLs con tus enlaces de Stripe Payment Links
                 const stripeLinks = {
-                    lite: 'https://buy.stripe.com/TU_ENLACE_LITE',
-                    pro: 'https://buy.stripe.com/TU_ENLACE_PRO'
+                    lite: 'https://buy.stripe.com/4gM14m31N4vl9kBdaKaIM02',
+                    pro: 'https://buy.stripe.com/dRm6oGauf7HxbsJeeOaIM00'
                 };
                 window.location.href = stripeLinks[product];
             });
