@@ -1,0 +1,17 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Casa minimalista con ventanas tipo grid - PRO (Verde) -->
+  <!-- Color: RGB(93, 154, 103) -->
+  
+  <!-- Techo -->
+  <path d="M256 80L96 200V432C96 440.837 103.163 448 112 448H400C408.837 448 416 440.837 416 432V200L256 80Z" stroke="#5D9A67" stroke-width="28" fill="none" stroke-linejoin="round"/>
+  
+  <!-- Línea horizontal central (divide superior/inferior) -->
+  <line x1="96" y1="320" x2="416" y2="320" stroke="#5D9A67" stroke-width="28" stroke-linecap="round"/>
+  
+  <!-- Línea vertical central -->
+  <line x1="256" y1="200" x2="256" y2="448" stroke="#5D9A67" stroke-width="28" stroke-linecap="round"/>
+  
+  <!-- Línea horizontal superior (crea grid 2x2 arriba) -->
+  <line x1="136" y1="260" x2="376" y2="260" stroke="#5D9A67" stroke-width="20" stroke-linecap="round"/>
+  
+</svg>
