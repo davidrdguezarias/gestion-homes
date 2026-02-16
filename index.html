@@ -239,6 +239,45 @@
             animation: fadeInUp 0.8s ease-out 0.4s both;
         }
 
+        .hero-gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--space-md);
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 640px) {
+            .hero-gallery {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .hero-gallery-item {
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: 
+                0 2px 4px rgba(0,0,0,0.02),
+                0 8px 16px rgba(0,0,0,0.04),
+                0 24px 48px rgba(0,0,0,0.06);
+            border: 1px solid var(--color-border);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .hero-gallery-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 
+                0 4px 8px rgba(0,0,0,0.04),
+                0 16px 32px rgba(0,0,0,0.08),
+                0 32px 64px rgba(0,0,0,0.1);
+        }
+
+        .hero-gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
         .hero-image-wrapper {
             position: relative;
             max-width: 1000px;
@@ -487,6 +526,21 @@
             opacity: 0.6;
         }
 
+        .pricing-discount {
+            margin-top: var(--space-xs);
+            font-size: 0.85rem;
+            color: #16a34a;
+            background: #f0fdf4;
+            padding: 0.5rem 0.75rem;
+            border-radius: 6px;
+            text-align: center;
+        }
+
+        .pricing-discount.featured-discount {
+            background: rgba(255,255,255,0.15);
+            color: #86efac;
+        }
+
         /* === PACK INVERSOR === */
         .pack-section {
             padding: var(--space-2xl) var(--space-md);
@@ -540,8 +594,21 @@
 
         .pack-visual {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(3, 1fr);
             gap: var(--space-sm);
+        }
+
+        .pack-visual .pack-item:last-child {
+            grid-column: 2;
+        }
+
+        @media (max-width: 500px) {
+            .pack-visual {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .pack-visual .pack-item:last-child {
+                grid-column: auto;
+            }
         }
 
         .pack-item {
@@ -699,6 +766,77 @@
         .faq {
             padding: var(--space-2xl) var(--space-md);
             background: var(--color-bg-alt);
+        }
+
+        /* === CONSULTORIA === */
+        .consultoria {
+            padding: var(--space-2xl) var(--space-md);
+            background: var(--color-highlight);
+        }
+
+        .consultoria-content {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .consultoria-text h2 {
+            font-family: var(--font-display);
+            font-size: clamp(1.75rem, 4vw, 2.25rem);
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            margin-bottom: var(--space-sm);
+        }
+
+        .consultoria-text > p {
+            color: var(--color-text-secondary);
+            margin-bottom: var(--space-lg);
+            font-size: 1.05rem;
+        }
+
+        .consultoria-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--space-sm);
+            text-align: left;
+            margin-bottom: var(--space-lg);
+        }
+
+        @media (max-width: 640px) {
+            .consultoria-list {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .consultoria-list li {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .consultoria-list svg {
+            width: 18px;
+            height: 18px;
+            color: var(--color-accent);
+            flex-shrink: 0;
+        }
+
+        .consultoria-price {
+            margin-bottom: var(--space-md);
+        }
+
+        .consultoria-amount {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            font-weight: 500;
+            color: var(--color-text);
+        }
+
+        .consultoria-unit {
+            font-size: 1.1rem;
+            color: var(--color-text-secondary);
         }
 
         .faq-grid {
@@ -900,9 +1038,19 @@
         </div>
         
         <div class="hero-image">
-            <div class="hero-image-wrapper">
-                <!-- Reemplaza esto con tu captura de pantalla -->
-                <img src="images/dashboard.png" alt="Dashboard de Gestion Homes - Vista principal con propiedades y transacciones">
+            <div class="hero-gallery">
+                <div class="hero-gallery-item">
+                    <img src="images/screenshot-1.png" alt="Dashboard principal de Gestion Homes">
+                </div>
+                <div class="hero-gallery-item">
+                    <img src="images/screenshot-2.png" alt="Gestión de propiedades">
+                </div>
+                <div class="hero-gallery-item">
+                    <img src="images/screenshot-3.png" alt="Control financiero">
+                </div>
+                <div class="hero-gallery-item">
+                    <img src="images/screenshot-4.png" alt="Contratos y tareas">
+                </div>
             </div>
         </div>
     </section>
@@ -1013,8 +1161,8 @@
                         <div class="pricing-price">29€ <span>pago único</span></div> 
                         -->
                         <div class="pricing-subtitle">La base para ordenar tu cartera y tener números claros</div>
-                        <!-- <div class="pricing-price">29,00 € <span>pago único · acceso de por vida</span></div> -->
-                        <div class="pricing-price">29,00 € <span class="price-meta">pago único · acceso de por vida</span></div>
+                        <div class="pricing-price">39€ <span class="price-meta">pago único · acceso de por vida</span></div>
+                        <div class="pricing-discount">Código <strong>EARLY-LITE</strong>: 10€ de descuento (válido 1 semana)</div>
                     </div>
                     <ul class="pricing-features">
                         <li>
@@ -1051,8 +1199,8 @@
                     <div class="pricing-header">
                         <div class="pricing-title">Gestion Homes Pro</div>
                         <div class="pricing-subtitle">Sistema completo para control, contratos y fiscalidad</div>
-                        <!-- <div class="pricing-price">99,00 € <span>pago único · acceso de por vida</span></div> -->
-                        <div class="pricing-price">99,00 € <span class="price-meta">pago único · acceso de por vida</span></div>
+                        <div class="pricing-price">119€ <span class="price-meta">pago único · acceso de por vida</span></div>
+                        <div class="pricing-discount featured-discount">Código <strong>EARLY-PRO</strong>: 20€ de descuento (válido 1 semana)</div>
 
                     </div>
                     <ul class="pricing-features">
@@ -1074,15 +1222,15 @@
                         </li>
                         <li>
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-                            Pack Inversor profesional (5 documentos listos para usar)
+                            Pack Inversor profesional (7 recursos listos para usar)
                         </li>
                         <li>
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-                            Automatización email → Notion (Blueprint de Make)
+                            Incluye Blueprint Make para automatizar facturas
                         </li>
                         <li>
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-                            Regalo: plantilla de equipamiento recomendado (amueblar, presupuestar y estandarizar)
+                            Plantilla de equipamiento con +400 artículos
                         </li>
                         <li>
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
@@ -1103,48 +1251,102 @@
             <div class="pack-content">
                 <div class="pack-text">
                     <h2>Pack Inversor incluido en Pro</h2>
-                    <!-- <p>Documentos reales que uso en mis propias inversiones. Listos para usar desde el primer día.</p> -->
                     <p>Documentos que uso en mis propias operaciones. Sin teoría: listos para aplicar desde el primer día.</p>
                     <ul class="pack-list">
                         <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-                            Checklist de visita a piso (imprimible)
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"/><line x1="8" y1="12" x2="16" y2="12"/><line x1="12" y1="8" x2="12" y2="16"/></svg>
+                            Calculadora de Inversión
                         </li>
                         <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-                            Poder notarial de ejemplo
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"/><line x1="8" y1="12" x2="16" y2="12"/><line x1="12" y1="8" x2="12" y2="16"/></svg>
+                            Calculadora de Hipoteca y Bonificaciones
                         </li>
                         <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-                            Contrato de arrendamiento
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+                            Cuestionario de Visita – Hoja imprimible
                         </li>
                         <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg>
-                            Calculadora de inversión
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                            Poder Notarial General – Plantilla
                         </li>
                         <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg>
-                            Calculadora de hipoteca
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                            Contrato de Arrendamiento de Temporada
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+                            Plantilla de Equipamiento – +400 artículos
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                            Blueprint Make – Automatización de Facturas
                         </li>
                     </ul>
                 </div>
                 <div class="pack-visual">
                     <div class="pack-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"/><line x1="8" y1="12" x2="16" y2="12"/><line x1="12" y1="8" x2="12" y2="16"/></svg>
+                        <span>Calculadora Inversión</span>
+                    </div>
+                    <div class="pack-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"/><line x1="8" y1="12" x2="16" y2="12"/><line x1="12" y1="8" x2="12" y2="16"/></svg>
+                        <span>Calculadora Hipoteca</span>
+                    </div>
+                    <div class="pack-item">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-                        <span>Checklist visita</span>
+                        <span>Cuestionario Visita</span>
                     </div>
                     <div class="pack-item">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-                        <span>Poder notarial</span>
+                        <span>Poder Notarial</span>
                     </div>
                     <div class="pack-item">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
-                        <span>Contrato</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                        <span>Contrato Arrendamiento</span>
                     </div>
                     <div class="pack-item">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-                        <span>Calculadoras</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+                        <span>Equipamiento +400</span>
                     </div>
+                    <div class="pack-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                        <span>Blueprint Make</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONSULTORIA -->
+    <section class="consultoria" id="consultoria">
+        <div class="container">
+            <div class="consultoria-content">
+                <div class="consultoria-text">
+                    <h2>Consultoría especializada</h2>
+                    <p>Soy experto en <strong>Notion, Make y Zapier</strong> aplicado al sector inmobiliario. Si necesitas ayuda para configurar tu sistema, automatizar procesos o adaptar la plantilla a tu operativa, puedo ayudarte.</p>
+                    <ul class="consultoria-list">
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                            Configuración personalizada de Notion
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                            Automatizaciones con Make y Zapier
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                            Integración con otras herramientas
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                            Estrategia de gestión inmobiliaria
+                        </li>
+                    </ul>
+                    <div class="consultoria-price">
+                        <span class="consultoria-amount">150€</span>
+                        <span class="consultoria-unit">/ hora</span>
+                    </div>
+                    <a href="mailto:david@gestion.homes?subject=Consultoría Gestion Homes" class="btn btn-primary">Solicitar consultoría</a>
                 </div>
             </div>
         </div>
@@ -1196,8 +1398,8 @@
         <div class="container">
             <div class="newsletter-box">
                 <div class="newsletter-content">
-                    <h2>Consejos de inversión en tu inbox</h2>
-                    <p>Únete a inversores que reciben estrategias y novedades cada semana. Sin spam.</p>
+                    <h2>¿Tienes dudas? Te lo explico en vídeo</h2>
+                    <p>Suscríbete y recibe un vídeo explicativo del producto + la calculadora de rentabilidad gratis.</p>
                 </div>
                 <div class="newsletter-form">
                     <!-- MAILERLITE EMBED -->
@@ -1273,7 +1475,7 @@
                     <a href="/terminos.html">Términos</a>
                     <a href="/privacidad.html">Privacidad</a>
                     <a href="/impressum.html">Impressum</a>
-                    <a href="mailto:david@gestion.homes">Contacto</a>
+                    <a href="/cdn-cgi/l/email-protection#dcb8bdaab5b89cbbb9afa8b5b3b2f2b4b3b1b9af">Contacto</a>
                 </div>
             </div>
             <div class="footer-right">
@@ -1282,7 +1484,7 @@
         </div>
     </footer>
 
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -1303,13 +1505,5 @@
                 e.preventDefault();
                 const product = this.dataset.product;
                 const stripeLinks = {
-                    lite: 'https://buy.stripe.com/14A4gy1XJ2ndbsJ5IiaIM05',
-                    pro: 'https://buy.stripe.com/7sYdR86dZ0f540h7QqaIM04'
-                };
-                window.location.href = stripeLinks[product];
-            });
-        });
-    </script>
-</body>
-</html>
- 
+                    lite: 'https://buy.stripe.com/4gM14m31N4vl9kBdaKaIM02',
+                    pro: 'https://buy.stripe.com/dRm6oGauf7HxbsJ
