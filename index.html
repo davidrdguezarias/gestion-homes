@@ -237,19 +237,21 @@
         .hero-image { 
             margin-top: 2.5rem;  /* antes var(--space-xl) */
             animation: fadeInUp 0.8s ease-out 0.4s both;
+            padding: 0 var(--space-md);
         }
 
         .hero-gallery {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: var(--space-md);
-            max-width: 1000px;
+            max-width: 1400px;
             margin: 0 auto;
         }
 
-        @media (max-width: 640px) {
+        @media (max-width: 900px) {
             .hero-gallery {
                 grid-template-columns: 1fr;
+                max-width: 700px;
             }
         }
 
