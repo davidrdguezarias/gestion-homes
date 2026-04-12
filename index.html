@@ -1513,6 +1513,21 @@
                 window.open(stripeLinks[product], '_blank');
             });
         });
+
+    // Handle hash on page load (fix fixed header offset)
+    window.addEventListener('load', function() {
+        if (window.location.hash) {
+            const target = document.querySelector(window.location.hash);
+            if (target) {
+                setTimeout(() => {
+                    const headerHeight = document.querySelector('header').offsetHeight;
+                    const top = target.getBoundingClientRect().top + window.pageYOffset - headerHeight - 16;
+                    window.scrollTo({ top: top, behavior: 'smooth' });
+                }, 300);
+            }
+        }
+    });
+        
     </script>
 </body>
 </html>
